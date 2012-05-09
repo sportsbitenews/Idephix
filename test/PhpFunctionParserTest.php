@@ -1,9 +1,9 @@
 <?php
-namespace Ideato\Deploy\Test;
+namespace Idephix\Test;
 
-require_once __DIR__.'/../src/lib/PhpFunctionParser.php';
+require_once __DIR__.'/../src/Idephix/PhpFunctionParser.php';
 
-use Ideato\Deploy\PhpFunctionParser;
+use Idephix\PhpFunctionParser;
 
 class PhpFunctionParserTest extends \PHPUnit_Framework_TestCase
 {

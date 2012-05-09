@@ -1,11 +1,11 @@
 <?php
-namespace Ideato\Deploy\Test;
+namespace Idephix\Test;
 
-require_once __DIR__.'/../src/lib/SshClient.php';
-require_once __DIR__.'/../src/lib/FakeSsh2Proxy.php';
+require_once __DIR__.'/../src/Idephix/SshClient.php';
+require_once __DIR__.'/../src/Idephix/FakeSsh2Proxy.php';
 
-use Ideato\Deploy\SshClient;
-use Ideato\Deploy\FakeSsh2Proxy;
+use Idephix\SshClient;
+use Idephix\FakeSsh2Proxy;
 
 class SshClientTest extends \PHPUnit_Framework_TestCase
 {

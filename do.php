@@ -5,22 +5,22 @@
  */
 
 require_once __DIR__.'/vendor/autoload.php';
-require_once __DIR__.'/lib/CommandWrapper.php';
-require_once __DIR__.'/lib/Idephix.php';
-require_once __DIR__.'/lib/Deploy.php';
-require_once __DIR__.'/lib/SshClient.php';
-require_once __DIR__.'/lib/CLISshProxy.php';
-require_once __DIR__.'/lib/PhpFunctionParser.php';
+require_once __DIR__.'/src/Idephix/CommandWrapper.php';
+require_once __DIR__.'/src/Idephix/Idephix.php';
+require_once __DIR__.'/src/Idephix/Deploy.php';
+require_once __DIR__.'/src/Idephix/SshClient.php';
+require_once __DIR__.'/src/Idephix/CLISshProxy.php';
+require_once __DIR__.'/src/Idephix/PhpFunctionParser.php';
 
-use Ideato\Deploy\PhpFunctionParser;
-use Ideato\Deploy\Deploy;
-use Ideato\Deploy\SshClient;
-use Ideato\Deploy\CLISshProxy;
+use Idephix\PhpFunctionParser;
+use Idephix\Deploy;
+use Idephix\SshClient;
+use Idephix\CLISshProxy;
 
-use Ideato\Deploy\Idephix;
+use Idephix\Idephix;
 
 $idx = new Idephix();
-
+	
 $configFile = getcwd().'/idxfile.php';
 
 if (!is_file($configFile)) {

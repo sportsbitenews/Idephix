@@ -1,6 +1,6 @@
 <?php
 
-namespace Ideato\Deploy;
+namespace Idephix;
 
 class SshClient
 {
