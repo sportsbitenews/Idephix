@@ -11,6 +11,7 @@ require_once __DIR__.'/src/Idephix/Deploy.php';
 require_once __DIR__.'/src/Idephix/SshClient.php';
 require_once __DIR__.'/src/Idephix/CLISshProxy.php';
 require_once __DIR__.'/src/Idephix/PhpFunctionParser.php';
+require_once __DIR__.'/src/Idephix/CommandTemplate.php';
 
 use Idephix\PhpFunctionParser;
 use Idephix\Deploy;
