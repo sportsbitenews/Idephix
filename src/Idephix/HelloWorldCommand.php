@@ -3,27 +3,17 @@
 
 namespace Idephix;
 
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
-
-class HelloWorldCommand extends Command {
-
-    protected function configure() {
-        $this
-                ->setName('example:Helloworld')
-                ->setDescription('greets everyone')
-                ->addArgument('who', InputArgument::OPTIONAL, 'the person to greet');
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output) {
-        $arg = $input->getArgument("who");
-        if ($arg != null)
-            $output->writeln("Hello ".$arg."!");
-        else
-            $output->writeln("Hello World!");
+class HelloWorldCommand{
+    
+    public function execute($who = null) {
+        $res = run("echod 'Hello World' > Hello1");
+        if(strpos($res[0], "not found") !== null){
+            $res = run("echo 'Ciao' > Hello2");
+        }
+        
+            //local("cd ~ && mkdir nuova_directory");
+        
+        echo "ahah";
     }
 
 }

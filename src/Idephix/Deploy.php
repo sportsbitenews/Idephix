@@ -59,7 +59,8 @@ class Deploy
 
     public function remotePrepare()
     {
-        if (strpos($this->remote('ls '.$this->getCurrentReleaseFolder()), 'No such file or directory') !== false) {
+        $resp = $this->remote('ls '.$this->getCurrentReleaseFolder());
+        if (strpos($resp, 'No such file or directory') !== false) {
             throw new \Exception('You have to bootstrap your server first: '.current($this->hosts));
         }
         $this->log("Bootstrap: OK");
