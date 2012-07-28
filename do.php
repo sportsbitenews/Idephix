@@ -61,7 +61,7 @@ if (array_key_exists('target', $env)) {
             $processID = pcntl_fork();
             if ($processID) {
                 $status;
-                pcntl_waitpid($processID, &$status, WUNTRACED);
+                pcntl_waitpid($processID, $status, WUNTRACED);
                 if(!pcntl_wifexited($status))
                     echo "Command execution error - abort";
                     exit(1);

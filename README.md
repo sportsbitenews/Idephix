@@ -16,3 +16,4 @@ $ php do.php
 $ php src/do.php idephix:test-params uno due tre --target=prod
 ```
 
+Nota: per funzionare bisogna abilitare la libreria pcntl ed eseguire php con il modulo pcntl.so abilitato.
