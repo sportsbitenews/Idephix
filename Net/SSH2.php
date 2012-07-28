@@ -1819,7 +1819,7 @@ class SSH2 {
         while (true) {
             if ($mode == NET_SSH2_READ_REGEX) {
                 preg_match($expect, $this->interactiveBuffer, $matches);
-                $match = $matches[0];
+                $match = !empty($matches[0]) ? $matches[0] : null;
             }
             $pos = !empty($match) ? strpos($this->interactiveBuffer, $match) : false;
             if ($pos !== false) {
@@ -2243,6 +2243,7 @@ class SSH2 {
 
         $start = strtok(microtime(), ' ') + strtok(''); // http://php.net/microtime#61838
         $result = strlen($packet) == fputs($this->fsock, $packet);
+        fflush($this->fsock);
         $stop = strtok(microtime(), ' ') + strtok('');
 
         if (defined('NET_SSH2_LOGGING')) {

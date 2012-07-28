@@ -2,11 +2,18 @@
 
 namespace Idephix;
 
+/**
+ * Provides interaction functionalities with a remote peer
+ * and local command execution.
+ * Constuctor accepts a generic object representing
+ * a remote server on which operations are executed.
+ */
+
 class BasicOperations {
 
     private $target;
 
-    public function __construct(SshClient $tar) {
+    public function __construct($tar) {
         $this->target = $tar;
     }
 
@@ -36,6 +43,22 @@ class BasicOperations {
             return $this->target->sudo($cmd);
         } else {
             echo("Dry run: remote sudo " . $cmd);
+        }
+    }
+    
+    public function get($from, $to, $dryRun = false) {
+        if (!$dryRun) {
+            return $this->target->get($from, $to);
+        } else {
+            echo("Dry run: get " . $from." into ".$to);
+        }
+    }
+    
+    public function put($from, $to, $dryRun = false) {
+        if (!$dryRun) {
+            return $this->target->put($from, $to);
+        } else {
+            echo("Dry run: put " . $from." into ".$to);
         }
     }
 
