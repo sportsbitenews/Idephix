@@ -1,18 +1,6 @@
 <?php
 
-/**
- *  Controller
- */
-require_once('Net/SFTP.php');
-require_once('Net/SSH2.php');
-require_once('Crypt/RSA.php');
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/src/Idephix/CommandWrapper.php';
-require_once __DIR__ . '/src/Idephix/Idephix.php';
-require_once __DIR__ . '/src/Idephix/Deploy.php';
-require_once __DIR__ . '/src/Idephix/SshClient.php';
-require_once __DIR__ . '/src/Idephix/CommandTemplate.php';
-require_once __DIR__ . '/src/Idephix/BasicOperations.php';
 
 use Idephix\PhpFunctionParser;
 use Idephix\Deploy;

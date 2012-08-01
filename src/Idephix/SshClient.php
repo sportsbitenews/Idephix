@@ -2,9 +2,8 @@
 
 namespace Idephix;
 
-use PHPSeclib\Net\SFTP;
-use PHPSeclib\Net\SSH2;
-use PHPSeclib\Crypt\RSA;
+use Net\SFTP;
+use Net\SSH2;
 
 /**
  * Represents an ssh connection with a remote server
@@ -36,17 +35,17 @@ class SshClient {
             'private_key_file' => '',
             'private_key_file_pwd' => '',
             'ssh_port' => '22'), $sshParams);
-        $this->key = new RSA();
+        $this->key = new \Crypt_RSA();
         $this->key->setPassword($this->params['private_key_file_pwd']);
         $this->key->loadKey(file_get_contents($this->params['private_key_file']));
         $this->connect();
     }
 
     public function connect() {
-        if (($this->proxy = new SSH2($this->host)) == false) {
+        if (($this->proxy = new \Net_SSH2($this->host)) == false) {
             throw new \Exception("Unable to connect");
         }
-        if (($this->proxy_sftp = new SFTP($this->host)) == false) {
+        if (($this->proxy_sftp = new \Net_SFTP($this->host)) == false) {
             throw new \Exception("Unable to connect");
         }
         try {

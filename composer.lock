@@ -1,14 +1,23 @@
 {
-    "hash": "c771afc791d64c5f089608de29a0bd98",
+    "hash": "c0199743335ff4b7b2ce9882de0be7e6",
     "packages": [
         {
+            "package": "phpseclib/phpseclib",
+            "version": "dev-master",
+            "source-reference": "46ac3b92f12ac074694ca1dfb924b259339a13c9",
+            "commit-date": "1343331878"
+        },
+        {
             "package": "symfony/console",
-            "version": "2.0.x-dev",
-            "source-reference": "v2.0.13"
+            "version": "v2.0.16"
         }
     ],
     "packages-dev": null,
     "aliases": [
 
-    ]
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "phpseclib/phpseclib": 20
+    }
 }
